@@ -59,3 +59,42 @@ test_that("Table 10 generation works with risk difference column", {
   res <- expect_silent(result)
   expect_snapshot(res)
 })
+
+test_that("Table 10 (gt) generation works", {
+  result <- make_table_10_gtsum(adae = adae, alt_counts_df = adsl)
+  res <- list(
+    "data" = result[["_data"]],
+    "column_label" = result[["_boxhead"]][["column_label"]],
+    "header" = result[["_heading"]],
+    "footnotes" = result[["_footnotes"]][["footnotes"]]
+  )
+  expect_snapshot(res)
+})
+
+test_that("Table 10 (gt) generation works with custom values", {
+  adae <- formatters::var_relabel(adae, AEBODSYS = "Body System or Organ Class(3)")
+  annotations <- list(
+    title = "Table 10. Patients With Serious Adverse Events ",
+    subtitle = "by System Organ Class and FDA Medical Query (Narrow),
+  Safety Population, Pooled Analyses",
+    footnotes = list(
+      "Duration = [e.g., X week double-blind treatment period or median and a range
+    indicating pooled trial durations]."
+    )
+  )
+  result <- make_table_10_gtsum(
+    adae = adae,
+    alt_counts_df = adsl,
+    lbl_overall = "Overall",
+    fmq_scope = "BROAD",
+    annotations = annotations,
+  )
+
+  res <- list(
+    "data" = result[["_data"]],
+    "column_label" = result[["_boxhead"]][["column_label"]],
+    "header" = result[["_heading"]],
+    "footnotes" = result[["_footnotes"]][["footnotes"]]
+  )
+  expect_snapshot(res)
+})
