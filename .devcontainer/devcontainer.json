@@ -1,0 +1,17 @@
+{
+	"name": "Falcon",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "VARIANT": "latest" }
+	},
+    "postCreateCommand": "Rscript -e 'devtools::install(dependencies=TRUE, upgrade=TRUE)'",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"quarto.quarto",
+				"REditorSupport.r",
+				"RDebugger.r-debugger"
+			]
+		}
+	}
+}
