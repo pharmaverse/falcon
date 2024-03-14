@@ -71,4 +71,48 @@ Required variables:
 +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 
 Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_33.R).
+
+## gtsummary Table
+
+```{r tbl_gtsum, message=FALSE, warning=FALSE}
+# Load Libraries & Data
+library(falcon)
+
+adsl <- random.cdisc.data::cadsl
+advs <- random.cdisc.data::cadvs
+advs$AVAL <- advs$AVAL - 100
+
+# Output table
+tbl <- make_table_33_gtsum(advs = advs)
+tbl
+```
+
+## gtsummary Table Setup
+
+```{r tbl_gtsum, eval=FALSE, echo=TRUE}
+```
+
+## Function Details: `make_table_33_gtsum`
+
+### `make_table_33_gtsum()`
+
+------------------------------------------------------------------------
+
+Required variables:
+
+-   **`advs`**: `USUBJID`, `AVISITN`, `PARAMCD`, `AVAL`, `AVALU`, and the variables specified by `arm_var` and `saffl_var`.
+
++---------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+| Argument      | Description                                                                                                        | Default              |
++:==============+:===================================================================================================================+:=====================+
+| `advs`        | (`data.frame`) Dataset (typically ADVS) required to build table.                                                   | *No default*         |
++---------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+| `arm_var`     | (`character`) Arm variable used to split table into columns.                                                       | `"ARM"`              |
++---------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+| `saffl_var`   | (`character`) Flag variable used to indicate inclusion in safety population.                                       | `"SAFFL"`            |
++---------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+| `lbl_overall` | (`character`) If specified, an overall column will be added to the table with the given value as the column label. | `"Total Population"` |
++---------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
+
+Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_33.R).
 :::

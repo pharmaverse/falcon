@@ -53,9 +53,9 @@ title: Template Library Index
 
 -   [FDA Table 35 -- Patients With Adverse Events by System Organ Class, Safety Population, Pooled Analysis (or Trial X)](table-templates/template-table_35.qmd)
 
--   [FDA Table 38 -- Patients With Adverse Events by System Organ Class, FDA Medical Query (Broad) and Preferred Term, Safety Population, Pooled Analysis (or Trial X)](table-templates/template-table_38.qmd)
+-   [FDA Table 36 --  Patients With Adverse Events by System Organ Class and Preferred Term, Safety Population, Pooled Analysis (or Trial X)](table-templates/template-table_36.qmd)
 
--   [FDA Table 36 -- Patients With Adverse Events1 by System Organ Class and Preferred Term, Safety Population, Pooled Analysis (or Trial X)](table-templates/template-table_35.qmd)
+-   [FDA Table 38 -- Patients With Adverse Events by System Organ Class, FDA Medical Query (Broad) and Preferred Term, Safety Population, Pooled Analysis (or Trial X)](table-templates/template-table_38.qmd)
 
 
 ------------------------------------------------------------------------

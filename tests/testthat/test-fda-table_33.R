@@ -50,3 +50,18 @@ test_that("Table 33 generation works with risk difference column", {
   res <- expect_silent(result)
   expect_snapshot(res)
 })
+
+test_that("Table 33 (gtsum) generation works with default values", {
+  result <- suppressWarnings(make_table_33_gtsum(advs = advs) %>% gt::extract_body())
+  res <- expect_silent(result)
+  expect_snapshot(res)
+})
+
+test_that("Table 33 (gtsum) generation works with custom values", {
+  result <- suppressWarnings(
+    make_table_33_gtsum(advs = advs, lbl_overall = "Total Population") %>% gt::extract_body()
+  )
+
+  res <- expect_silent(result)
+  expect_snapshot(res)
+})

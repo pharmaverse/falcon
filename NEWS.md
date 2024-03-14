@@ -15,6 +15,8 @@
   `make_table_09_gtsum`, `make_table_32_gtsum`.
 * Added option to include risk difference columns in tables using the `split_cols_by_arm` function via the `risk_diff` argument.
 * Added risk difference functionality into relevant table-generating functions via the `risk_diff` argument.
+* Added new function for creating standard FDA tables using additional packages:  
+`make_table_33_gtsum`.
 
 ### Miscellaneous
 * Initialized the package.
