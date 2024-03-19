@@ -7,7 +7,7 @@
 basic_table_annot(show_colcounts = TRUE, annotations = NULL)
 }
 \arguments{
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
 annotation types are \code{title}, \code{subtitles}, \code{main_footer}, and \code{prov_footer}. Each name-value pair should

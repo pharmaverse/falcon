@@ -9,7 +9,7 @@ split_cols_by_arm(lyt, arm_var = "ARM", lbl_overall = NULL, risk_diff = NULL)
 \arguments{
 \item{lyt}{(\code{rtables} layout object)\cr Layout object pre-data used for tabulation.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{lbl_overall}{(\code{character})\cr if specified, an overall column will be added to the table with
 the given value as the column label.}

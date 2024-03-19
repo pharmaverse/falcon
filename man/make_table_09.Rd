@@ -2,6 +2,7 @@
 % Please edit documentation in R/fda-table_09.R
 \name{make_table_09}
 \alias{make_table_09}
+\alias{make_table_09_tplyr}
 \alias{make_table_09_gtsum}
 \title{FDA Table 9: Patients With Serious Adverse Events by System Organ Class and Preferred Term,
 Safety Population, Pooled Analyses}
@@ -18,6 +19,25 @@ make_table_09(
   lbl_overall = NULL,
   risk_diff = NULL,
   prune_0 = TRUE,
+  annotations = NULL
+)
+
+make_table_09_tplyr(
+  adae,
+  alt_counts_df = NULL,
+  id_var = "USUBJID",
+  arm_var = "ARM",
+  saffl_var = "SAFFL",
+  ser_var = "AESER",
+  soc_var = "AESOC",
+  pref_var = "AEDECOD",
+  lbl_soc_var = "System Organ Class",
+  lbl_pref_var = "Reported Term for Adverse Event",
+  risk_diff_pairs = NULL,
+  show_colcounts = TRUE,
+  lbl_overall = NULL,
+  prune_0 = TRUE,
+  tplyr_raw = FALSE,
   annotations = NULL
 )
 
@@ -43,15 +63,15 @@ make_table_09_gtsum(
 
 \item{alt_counts_df}{(\code{character})\cr alternative dataset (typically ADSL) used only to calculate column counts.}
 
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{saffl_var}{(\code{character})\cr safety population flag variable from \code{adae} to include in the table.}
 
-\item{pref_var}{(\code{character})\cr preferred term variable from \code{adae} to include in the table.}
+\item{pref_var}{(\code{character})\cr Name of the preferred term variable from \code{adae} to include in the table.}
 
 \item{lbl_pref_var}{(\code{character})\cr label corresponding to preferred term variable \code{pref_var} to print in the table.}
 
@@ -62,7 +82,7 @@ the given value as the column label.}
 of length 2 and contain the name of treatment arms to calculate risk difference and its 95\% CI for. Those names
 must exist in the \code{arm_var} column of the dataset specified in \code{adae}.}
 
-\item{prune_0}{(\code{flag})\cr whether all-zero rows should be removed from the table.}
+\item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
 
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
 annotation types are \code{title}, \code{subtitles}, and a list of characters called \code{footnotes}.
@@ -74,9 +94,25 @@ Each name-value pair should use the annotation type as name and the desired stri
 
 \item{lbl_soc_var}{(\code{character})\cr label corresponding to system organ class variable
 \code{soc_var} to print in the table.}
+
+\item{risk_diff_pairs}{(\code{list} of \code{character} vectors)\cr Optional. List of character vectors. Each vector must be
+of length 2 and contain the name of treatment arms to calculate risk difference and its 95\% CI for. Those names
+must exist in the \code{arm_var} column of the dataset specified in \code{adae}.}
+
+\item{tplyr_raw}{(\code{flag})\cr Boolean. Indicates whether the raw \code{tibble} created using \code{Tplyr} functions should be
+returned or a presentation ready \code{gt_table} (default).}
 }
 \value{
+\itemize{
+\item \code{make_table_09} returns an \code{rtables} table object.
+}
+
 An \code{rtable} object.
+
+\itemize{
+\item \code{make_table_09_tplyr()} returns a \code{gt_tbl} object when \code{tplyr_raw = FALSE} (default) and
+a \code{tibble} object when \code{tplyr_raw = TRUE}.
+}
 
 \itemize{
 \item \code{make_table_32_gtsum} returns a \code{gt} object
@@ -101,18 +137,67 @@ flag variables are treated as \code{"N"}.
 \item Numbers in table represent the absolute numbers of patients and fraction of \code{N}.
 \item All-zero rows are removed by default (see \code{prune_0} argument).
 }
+
+For \code{make_table_09_tplyr()}
+\itemize{
+\item \code{adae} must contain the variables specified by \code{id_var}, \code{arm_var}, \code{saffl_var}, \code{ser_var}, \code{soc_var}, and
+\code{pref_var}.
+\item If specified, \code{alt_counts_df} must contain the variables specified by \code{id_var}, \code{saffl_var}, and \code{arm_var}.
+\item Flag variables are expected to have two levels: \code{"Y"} (true) and \code{"N"} (false). Missing values in
+flag variables are treated as \code{"N"}.
+\item Columns are split by the variable specified in \code{arm_var}. Overall population column is excluded by default
+(see \code{lbl_overall} argument).
+\item Numbers in the table represent the absolute numbers of patients and fraction of \code{N} (total number of patient in
+the safety population.
+\item All-zero rows are removed by default (see \code{prune_0} argument).
+\item Risk difference is calculated by using the default functionality of \code{Tplyr::add_risk_diff()}
+}
 }
 \section{Functions}{
 \itemize{
+\item \code{make_table_09()}: Create FDA table 9 using functions from \code{rtables} and \code{tern}.
+
+\item \code{make_table_09_tplyr()}: Create FDA table 9 using functions from \code{Tplyr}.
+
 \item \code{make_table_09_gtsum()}: Create FDA table 9 using functions from \code{gt}.
 
 }}
+\note{
+\itemize{
+\item \code{make_table_09_tplyr()} does not support annotations in case \code{tplyr_raw = TRUE}.
+\item \code{make_table_09_tplyr()} raises a warning in case \code{pref_var} or \code{soc_var} is a factor. Those can safely be ignored.
+\item \code{make_table_09_tplyr()} does not explicitly handle missings.
+}
+}
 \examples{
 adsl <- random.cdisc.data::cadsl
 adae <- random.cdisc.data::cadae
 
 tbl <- make_table_09(adae = adae, alt_counts_df = adsl)
 tbl
+
+adsl <- random.cdisc.data::cadsl
+adae <- random.cdisc.data::cadae
+
+# Basic table
+make_table_09_tplyr(adae = adae, alt_counts_df = adsl)
+
+# Activate risk difference column
+rd_pairs <- list(c("A: Drug X", "B: Placebo"), c("A: Drug X", "C: Combination"))
+make_table_09_tplyr(adae = adae, alt_counts_df = adsl, risk_diff_pairs = rd_pairs)
+
+# Add overall column
+make_table_09_tplyr(adae = adae, alt_counts_df = adsl, lbl_overall = "Total patients")
+
+# Add titles and footnotes
+annot <- list(
+  title = "Table 9. Patients with Serious Adverse Events by SOC and PT, Safety Population,
+    Pooled Analyses",
+  subtitles = c("Only one title, but", "multiple subtitles possible"),
+  main_footer = c("Main footer 1", "Main footer 2"),
+  prov_footer = c("Some more information", "E.g. a source note")
+)
+make_table_09_tplyr(adae = adae, alt_counts_df = adsl, annotations = annot)
 
 adsl <- random.cdisc.data::cadsl
 adae <- random.cdisc.data::cadae

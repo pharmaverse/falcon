@@ -4,6 +4,29 @@
 \alias{argument_convention}
 \title{Standard Arguments}
 \arguments{
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
+
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
+
+\item{ser_var}{(\code{character})\cr Name of the serious adverse event flag variable which must contain at least
+"Y" for "Yes".}
+
+\item{vars}{(\code{vector} of \code{character})\cr Variables from \code{df} to include in the table.}
+
+\item{pref_var}{(\code{character})\cr Name of the preferred term variable from \code{adae} to include in the table.}
+
+\item{soc_var}{(\code{character})\cr Name of the system organ class variable from \code{adae} to include in the table.}
+
+\item{.stats}{(\code{character})\cr Statistics to include in the table. Includes statistics for all variable
+types (only the statistics that are valid for a given variable's type will be printed).
+See \code{\link[tern:analyze_variables]{tern::summarize_vars()}} for options.}
+
+\item{.formats}{(named \code{list} of \code{character})\cr List of formats corresponding to each value in \code{.stats}.
+Each name is a value in \code{.stats} and the corresponding value is the format that should be applied to
+that statistic. See \code{\link[formatters:list_formats]{formatters::list_valid_format_labels()}} for a list of valid formats.}
+
+\item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
+
 \item{adae}{(\code{data.frame})\cr dataset (typically ADAE) required to build table.}
 
 \item{adex}{(\code{data.frame})\cr dataset (typically ADEX) required to build table.}
@@ -17,8 +40,6 @@
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
 annotation types are \code{title}, \code{subtitles}, \code{main_footer}, and \code{prov_footer}. Each name-value pair should
 use the annotation type as name and the desired string as value.}
-
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
 
 \item{df}{(\code{data.frame})\cr dataset required to build table.}
 
@@ -49,10 +70,6 @@ in the table. Labels should be ordered according to the order of variables in \c
 
 \item{na_rm}{(\code{flag})\cr whether \code{NA} levels should be removed from the table.}
 
-\item{pref_var}{(\code{character})\cr preferred term variable from \code{adae} to include in the table.}
-
-\item{prune_0}{(\code{flag})\cr whether all-zero rows should be removed from the table.}
-
 \item{risk_diff}{(named \code{list})\cr list of settings to apply to add one or more risk difference columns to the table.
 Defaults to \code{NULL} (no risk difference column added). See \code{\link[tern:add_riskdiff]{tern::add_riskdiff()}} for more details. List should
 contain the following elements:
@@ -68,22 +85,16 @@ be included in the column labels by default. The length of \code{col_label} must
 
 \item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
 
-\item{trtemfl_var}{(\code{character})\cr flag variable used to identify Treatment-emergent AE.}
-
 \item{sex_scope}{(\code{character})\cr Level of \code{SEX} to output in table.}
-
-\item{soc_var}{(\code{character})\cr flag variable used to indicate system organ class.}
-
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
-
-\item{trtsdtm_var}{(\code{character})\cr treatment start datetime variable.}
 
 \item{trtedtm_var}{(\code{character})\cr treatment end datetime variable.}
 
+\item{trtemfl_var}{(\code{character})\cr flag variable used to identify Treatment-emergent AE.}
+
+\item{trtsdtm_var}{(\code{character})\cr treatment start datetime variable.}
+
 \item{u_trtdur}{(\code{character})\cr unit for duration of treatment. Options are \code{"days"}, \code{"weeks"}, \code{"months"},
 and \code{"years"}.}
-
-\item{vars}{(\code{vector} of \code{character})\cr variables from \code{df} to include in the table.}
 
 \item{xticks}{(\code{vector} of \code{numeric})\cr x-axis tick positions. If \code{NA} (default), tick mark positions are
 automatically calculated.}

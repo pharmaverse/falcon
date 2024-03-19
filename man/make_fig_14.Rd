@@ -23,7 +23,7 @@ make_fig_14(
 \arguments{
 \item{df}{(\code{data.frame})\cr dataset required to build table.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
 

@@ -29,15 +29,15 @@ make_table_15(
 
 \item{alt_counts_df}{(\code{character})\cr alternative dataset (typically ADSL) used only to calculate column counts.}
 
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
 
-\item{pref_var}{(\code{character})\cr preferred term variable from \code{adae} to include in the table.}
+\item{pref_var}{(\code{character})\cr Name of the preferred term variable from \code{adae} to include in the table.}
 
 \item{sex_scope}{(\code{character})\cr Level of \code{SEX} to output in table.}
 
@@ -63,7 +63,7 @@ be included in the column labels by default. The length of \code{col_label} must
 \item \code{pct}: (optional) whether the output should be returned as percentages. Defaults to \code{TRUE}.
 }}
 
-\item{prune_0}{(\code{flag})\cr whether all-zero rows should be removed from the table.}
+\item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
 
 \item{na_level}{(\code{character})\cr string to represent missing values.}
 

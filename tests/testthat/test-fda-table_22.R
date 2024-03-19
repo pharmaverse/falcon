@@ -11,6 +11,7 @@ adsl <- random.cdisc.data::cadsl %>%
   )
 
 adae <- random.cdisc.data::cadae
+
 df <- left_join(adsl, adae, by = intersect(names(adsl), names(adae)))
 
 test_that("Table 22 generation works with default values", {

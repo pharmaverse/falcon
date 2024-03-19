@@ -22,7 +22,7 @@ make_table_08(
 
 \item{adex}{(\code{data.frame})\cr dataset (typically ADEX) required to build table.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 

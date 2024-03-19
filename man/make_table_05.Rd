@@ -26,9 +26,9 @@ make_table_05(
 
 \item{alt_counts_df}{(\code{character})\cr alternative dataset (typically ADSL) used only to calculate column counts.}
 
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 
@@ -59,7 +59,7 @@ be included in the column labels by default. The length of \code{col_label} must
 \item \code{pct}: (optional) whether the output should be returned as percentages. Defaults to \code{TRUE}.
 }}
 
-\item{prune_0}{(\code{flag})\cr whether all-zero rows should be removed from the table.}
+\item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
 
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
 annotation types are \code{title}, \code{subtitles}, \code{main_footer}, and \code{prov_footer}. Each name-value pair should

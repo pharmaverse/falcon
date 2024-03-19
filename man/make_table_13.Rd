@@ -24,17 +24,17 @@ make_table_13(
 
 \item{alt_counts_df}{(\code{character})\cr alternative dataset (typically ADSL) used only to calculate column counts.}
 
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
 \item{min_freq}{(\code{proportion})\cr minimum \% frequency (fraction of \code{N}) required in any column to include each row.}
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
 
-\item{pref_var}{(\code{character})\cr preferred term variable from \code{adae} to include in the table.}
+\item{pref_var}{(\code{character})\cr Name of the preferred term variable from \code{adae} to include in the table.}
 
 \item{lbl_pref_var}{(\code{character})\cr label corresponding to preferred term variable \code{pref_var} to print in the table.}
 

@@ -32,7 +32,7 @@ Note that \code{df} is filtered to only include treatment-emergent adverse event
 
 \item{id_var}{(\code{character})\cr variable used as unique subject identifier.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 }
 \description{
 Analysis Function to Calculate Count/Fraction of Any Adverse Event Occurrences

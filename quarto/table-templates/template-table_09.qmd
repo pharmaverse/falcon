@@ -31,7 +31,7 @@ make_table_09(adae = adae, alt_counts_df = adsl, pref_var = pref_var, risk_diff 
 ```{r tbl, eval=FALSE, echo=TRUE}
 ```
 
-## Function Details
+## Function Details: `make_table_09`
 
 ### `make_table_09()`
 
@@ -125,5 +125,57 @@ Required variables:
 of length 2 and contain the name of treatment arms to calculate risk difference and its 95% CI for. Those names must exist in the `arm_var` column of the dataset specified in `adae`.
                                                                                           | `NULL`                                                |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_09.R#L107).
+Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_09.R).
+
+## Tplyr Table
+
+```{r tbl_tplyr, message=FALSE, warning=FALSE}
+# Load Libraries & Data
+library(falcon)
+
+adsl <- random.cdisc.data::cadsl
+adae <- random.cdisc.data::cadae
+
+# Output Table
+make_table_09_tplyr(adae = adae, alt_counts_df = adsl, tplyr_raw = TRUE)
+```
+
+## Tplyr Table Setup
+
+```{r tbl_tplyr, eval=FALSE, echo=TRUE}
+```
+
+
+## Function Details: `make_table_09_tplyr`
+
+### `make_table_09_tplyr()`
+
+------------------------------------------------------------------------
+
+Required variables:
+
+-   **`adae`**: must contain the variables specified by `id_var`, `arm_var`, `saffl_var`, `ser_var`, `soc_var`, and `pref_var`.
+-   **`alt_counts_df`** (if specified): must contain the variables specified by `id_var`, `saffl_var`, and `arm_var`.
+
+| Argument         | Description                                                                                                                                                                                                             | Default                                                  |
+|:------------|:---------------------------------------------|:------------|
+| `adae`           | (`data.frame`) Adverse events dataset (typically ADAE) required to build table.                                                                                                                                         | *No default*                                             |
+| `alt_counts_df`  | (`character`) Alternative dataset used only to calculate column counts.                                                                                                                                                 | `NULL`                                                   |
+| `id_var`         | (`character`) Name of the unique subject identifiers variable.                                                                                                                                                          | `"USUBJID"`                                              |
+| `arm_var`        | (`character`) Name of the treatment arm variable used to split table into columns.                                                                                                                                      | `"ARM"`                                                  |
+| `saffl_var`      | (`character`) Name of the safety flag variable which must contain at least "Y" for "Yes".                                                                                                                               | `"SAFFL"`                                                |
+| `ser_var`        | (`character`) Name of the serious adverse event flag variable which must contain at least "Y" for "Yes".                                                                                                                | `"AESER"`                                                |
+| `soc_var`        | (`character`) Name of the system organ class variable from `adae` to include in the table.                                                                                                                              | `"AESOC"`                                                |
+| `pref_var`       | (`character`) Name of the preferred term variable from `adae` to include in the table.                                                                                                                                  | `"AEDECOD"`                                              |
+| `lbl_soc_var`    | (`character`) Label corresponding to system organ class variable `soc_var` to print in the table.                                                                                                                       | `"System Organ Class"`                                   |
+| `lbl_pref_var`   | (`character`) Label corresponding to preferred term variable `pref_var` to print in the table.                                                                                                                          | `"Reported Term for Adverse Event"`                      |
+| `risk_diff_pairs`| (`list` of `character` vectors) Each vector contains two treatment arm names to calculate risk difference for. The names must exist in the `arm_var` column of the `adae` dataset.                                      | `NULL`                                                   |
+| `show_colcounts` | (`boolean`) Whether column counts should be printed.                                                                                                                                                                    | `TRUE`                                                   |
+| `lbl_overall`    | (`character`) If specified, an overall column will be added to the table with the given value as the column label.                                                                                                      | `NULL`                                                   |
+| `prune_0`        | (`flag`) Whether all-zero rows should be removed from the table.                                                                                                                                                        | `TRUE`                                                   |
+| `tplyr_raw`      | (`flag`) Whether the raw `tibble` created using `Tplyr` functions should be returned or a presentation ready `gt_table` (default).                                                 | `FALSE`                                                  |
+| `annotations`    | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer`. Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                                   |
+
+Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_09.R).
+
 :::

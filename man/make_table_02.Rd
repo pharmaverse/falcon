@@ -51,13 +51,13 @@ make_table_02_gtsum(
 
 \item{alt_counts_df}{(\code{character})\cr alternative dataset (typically ADSL) used only to calculate column counts.}
 
-\item{show_colcounts}{(\code{flag})\cr whether column counts should be printed.}
+\item{show_colcounts}{(\code{flag})\cr Whether column counts should be printed. Boolean.}
 
-\item{arm_var}{(\code{character})\cr arm variable used to split table into columns.}
+\item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
 \item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
 
-\item{vars}{(\code{vector} of \code{character})\cr variables from \code{df} to include in the table.}
+\item{vars}{(\code{vector} of \code{character})\cr Variables from \code{df} to include in the table.}
 
 \item{lbl_vars}{(\code{vector} of \code{character})\cr labels corresponding to variables in \code{vars} to print
 in the table. Labels should be ordered according to the order of variables in \code{vars}.}
@@ -67,7 +67,7 @@ the given value as the column label.}
 
 \item{na_rm}{(\code{flag})\cr whether \code{NA} levels should be removed from the table.}
 
-\item{prune_0}{(\code{flag})\cr whether all-zero rows should be removed from the table.}
+\item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
 
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
 annotation types are \code{title}, \code{subtitles}, \code{main_footer}, and \code{prov_footer}. Each name-value pair should
