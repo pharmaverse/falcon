@@ -2,6 +2,7 @@
 % Please edit documentation in R/fda-table_10.R
 \name{make_table_10}
 \alias{make_table_10}
+\alias{make_table_10_gtsum}
 \title{FDA Table 10: Patients With Serious Adverse Events by System Organ Class and
 FDA Medical Query (Narrow), Safety Population, Pooled Analyses}
 \usage{
@@ -12,6 +13,7 @@ make_table_10(
   id_var = "USUBJID",
   arm_var = "ARM",
   saffl_var = "SAFFL",
+  soc_var = "AEBODSYS",
   fmqsc_var = "FMQ01SC",
   fmqnam_var = "FMQ01NAM",
   fmq_scope = "NARROW",
@@ -19,6 +21,23 @@ make_table_10(
   risk_diff = NULL,
   prune_0 = TRUE,
   na_level = "<Missing>",
+  annotations = NULL
+)
+
+make_table_10_gtsum(
+  adae,
+  alt_counts_df = NULL,
+  show_colcounts = TRUE,
+  saffl_var = "SAFFL",
+  ser_var = "AESER",
+  arm_var = "ARM",
+  id_var = "USUBJID",
+  soc_var = "AEBODSYS",
+  fmqsc_var = "FMQ01SC",
+  fmqnam_var = "FMQ01NAM",
+  fmq_scope = "NARROW",
+  lbl_soc_var = formatters::var_labels(adae, fill = TRUE)[soc_var],
+  lbl_overall = NULL,
   annotations = NULL
 )
 }
@@ -33,7 +52,9 @@ make_table_10(
 
 \item{arm_var}{(\code{character})\cr Name of the treatment arm variable used to split table into columns.}
 
-\item{saffl_var}{(\code{character})\cr flag variable used to indicate inclusion in safety population.}
+\item{saffl_var}{(\code{character})\cr safety population flag variable from \code{adae} to include in the table.}
+
+\item{soc_var}{(\code{character})\cr system organ class variable from \code{adae} to include in the table.}
 
 \item{fmqsc_var}{(\code{character})\cr FMQ scope variable to use in table.}
 
@@ -44,29 +65,29 @@ make_table_10(
 \item{lbl_overall}{(\code{character})\cr if specified, an overall column will be added to the table with
 the given value as the column label.}
 
-\item{risk_diff}{(named \code{list})\cr list of settings to apply to add one or more risk difference columns to the table.
-Defaults to \code{NULL} (no risk difference column added). See \code{\link[tern:add_riskdiff]{tern::add_riskdiff()}} for more details. List should
-contain the following elements:
-\itemize{
-\item \code{arm_x}: (required) the name of reference arm.
-\item \code{arm_y}: (required) the names of the arms to compare to the reference arm. A new column will be added for each
-element of \code{arm_y}.
-\item \code{col_label}: (optional) labels to use for the risk difference columns. Defaults to
-\code{"Risk Difference (\%) (95\% CI)"}. For more than one risk difference column, \code{"arm x vs. arm y"} text will also
-be included in the column labels by default. The length of \code{col_label} must be equal to the length of \code{arm_y}.
-\item \code{pct}: (optional) whether the output should be returned as percentages. Defaults to \code{TRUE}.
-}}
+\item{risk_diff}{(\code{list} of \code{character} vectors)\cr List of character vectors. Each vector must be
+of length 2 and contain the name of treatment arms to calculate risk difference and its 95\% CI for. Those names
+must exist in the \code{arm_var} column of the dataset specified in \code{adae}.}
 
 \item{prune_0}{(\code{flag})\cr Whether all-zero rows should be removed from the table. Boolean.}
 
 \item{na_level}{(\code{character})\cr string to represent missing values.}
 
 \item{annotations}{(named \code{list} of \code{character})\cr list of annotations to add to the table. Valid
-annotation types are \code{title}, \code{subtitles}, \code{main_footer}, and \code{prov_footer}. Each name-value pair should
-use the annotation type as name and the desired string as value.}
+annotation types are \code{title}, \code{subtitles}, and a list of characters called \code{footnotes}.
+Each name-value pair should use the annotation type as name and the desired string as the value.}
+
+\item{ser_var}{(\code{character})\cr serious Event variable from \code{adae} to include in the table.}
+
+\item{lbl_soc_var}{(\code{character})\cr label corresponding to system organ class variable
+\code{soc_var} to print in the table.}
 }
 \value{
 An \code{rtable} object.
+
+\itemize{
+\item \code{make_table_10_gtsum} returns a \code{gt_tbl} object.
+}
 }
 \description{
 FDA Table 10: Patients With Serious Adverse Events by System Organ Class and
@@ -76,7 +97,7 @@ FDA Medical Query (Narrow), Safety Population, Pooled Analyses
 \itemize{
 \item \code{adae} must contain the variables \code{AEBODSYS}, \code{AESER}, and the variables specified by
 \code{arm_var}, \code{id_var}, \code{saffl_var}, \code{fmqsc_var}, and \code{fmqnam_var}.
-\item If specified, \code{alt_counts_df} must contain \code{USUBJID} and the variables specified by \code{arm_var} and \code{saffl_var}.
+\item If specified, \code{alt_counts_df} must contain \code{id_var} and the variables specified by \code{arm_var} and \code{saffl_var}.
 \item \code{fmqsc_var} must contain "BROAD" or "NARROW" values, one of which will be displayed in the table. Narrow is
 selected by default (see \code{fmq_scope} argument).
 \item Flag variables (i.e. \code{XXXFL}) are expected to have two levels: \code{"Y"} (true) and \code{"N"} (false). Missing values in
@@ -86,6 +107,11 @@ flag variables are treated as \code{"N"}.
 \item All-zero rows are removed by default (see \code{prune_0} argument).
 }
 }
+\section{Functions}{
+\itemize{
+\item \code{make_table_10_gtsum()}: Create FDA table 10 using functions from \code{gtsummary}.
+
+}}
 \examples{
 library(dplyr)
 
@@ -102,6 +128,24 @@ adae <- adae \%>\%
 adae$FMQ01SC[is.na(adae$FMQ01SC)] <- "NARROW"
 
 tbl <- make_table_10(adae = adae, alt_counts_df = adsl)
+tbl
+
+tbl <- make_table_10_gtsum(adae = adae, alt_counts_df = adsl)
+tbl
+
+annotations <- list(
+  title = "Table 10. Patients With Serious Adverse Events ",
+  subtitle = "by System Organ Class and FDA Medical Query (Narrow),
+  Safety Population, Pooled Analyses",
+  footnotes = list(
+    "Duration = [e.g., X week double-blind treatment period or median and a range
+    indicating pooled trial durations]."
+  )
+)
+tbl <- make_table_10_gtsum(adae,
+  alt_counts_df = adsl,
+  annotations = annotations
+)
 tbl
 
 }

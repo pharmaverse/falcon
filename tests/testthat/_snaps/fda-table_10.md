@@ -99,3 +99,251 @@
         FMQ2                       14 (10.4%)   15 (11.2%)     14 (10.6%)           0.7 (-6.7 - 8.2)      
         FMQ3                       11 (8.2%)     9 (6.7%)      11 (8.3%)           -1.5 (-7.8 - 4.8)      
 
+# Table 10 (gt) generation works
+
+    Code
+      res
+    Output
+      $data
+      # A tibble: 24 x 14
+         tbl_id1 variable var_label row_type label  var_type_1  stat_1_1    stat_2_1  
+           <int> <chr>    <lgl>     <chr>    <chr>  <chr>       <chr>       <chr>     
+       1       1 soc      NA        label    cl A.1 categorical ""          ""        
+       2       1 ae       NA        level    FMQ1   categorical "17 (13%)"  "117 (87%~
+       3       1 ae       NA        level    FMQ2   categorical "23 (17%)"  "111 (83%~
+       4       1 ae       NA        level    FMQ3   categorical "20 (15%)"  "114 (85%~
+       5       2 soc      NA        label    cl B.1 categorical ""          ""        
+       6       2 ae       NA        level    FMQ1   categorical "8 (6.0%)"  "126 (94%~
+       7       2 ae       NA        level    FMQ2   categorical "5 (3.7%)"  "129 (96%~
+       8       2 ae       NA        level    FMQ3   categorical "10 (7.5%)" "124 (93%~
+       9       3 soc      NA        label    cl B.2 categorical ""          ""        
+      10       3 ae       NA        level    FMQ1   categorical "13 (9.7%)" "121 (90%~
+      11       3 ae       NA        level    FMQ2   categorical "12 (9.0%)" "122 (91%~
+      12       3 ae       NA        level    FMQ3   categorical "6 (4.5%)"  "128 (96%~
+      13       4 soc      NA        label    cl C.2 categorical ""          ""        
+      14       4 ae       NA        level    FMQ1   categorical "9 (6.7%)"  "125 (93%~
+      15       4 ae       NA        level    FMQ2   categorical "6 (4.5%)"  "128 (96%~
+      16       4 ae       NA        level    FMQ3   categorical "6 (4.5%)"  "128 (96%~
+      17       5 soc      NA        label    cl D.1 categorical ""          ""        
+      18       5 ae       NA        level    FMQ1   categorical "23 (17%)"  "111 (83%~
+      19       5 ae       NA        level    FMQ2   categorical "22 (16%)"  "112 (84%~
+      20       5 ae       NA        level    FMQ3   categorical "15 (11%)"  "119 (89%~
+      21       6 soc      NA        label    cl D.2 categorical ""          ""        
+      22       6 ae       NA        level    FMQ1   categorical "8 (6.0%)"  "126 (94%~
+      23       6 ae       NA        level    FMQ2   categorical "14 (10%)"  "120 (90%~
+      24       6 ae       NA        level    FMQ3   categorical "11 (8.2%)" "123 (92%~
+      # i 6 more variables: var_type_2 <chr>, stat_1_2 <chr>, stat_2_2 <chr>,
+      #   var_type_3 <chr>, stat_1_3 <chr>, stat_2_3 <chr>
+      
+      $column_label
+      $column_label[[1]]
+      [1] "tbl_id1"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[2]]
+      [1] "variable"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[3]]
+      [1] "var_label"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[4]]
+      [1] "row_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[5]]
+      [1] "**System Organ Class** <br>FMQ (Narrow)"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[6]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[7]]
+      [1] "**A: Drug X**  \nN = 134"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[8]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[9]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[10]]
+      [1] "**B: Placebo**  \nN = 134"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[11]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[12]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[13]]
+      [1] "**C: Combination**  \nN = 132"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[14]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      
+      $header
+      $header$title
+      NULL
+      
+      $header$subtitle
+      NULL
+      
+      $header$preheader
+      NULL
+      
+      
+      $footnotes
+      list()
+      
+
+# Table 10 (gt) generation works with custom values
+
+    Code
+      res
+    Output
+      $data
+      # A tibble: 8 x 17
+        tbl_id1 variable row_type label  var_label var_type_1_1 stat_1_1_1  stat_2_1_1
+          <int> <chr>    <chr>    <chr>  <chr>     <chr>        <chr>       <chr>     
+      1       1 soc      label    cl B.2 cl B.2    categorical  ""          ""        
+      2       1 ae       level    FMQ1   <NA>      categorical  "8 (6.0%)"  "126 (94%~
+      3       1 ae       level    FMQ2   <NA>      categorical  "12 (9.0%)" "122 (91%~
+      4       1 ae       level    FMQ3   <NA>      categorical  "8 (6.0%)"  "126 (94%~
+      5       2 soc      label    cl C.1 cl C.1    categorical  ""          ""        
+      6       2 ae       level    FMQ1   <NA>      categorical  "7 (5.2%)"  "127 (95%~
+      7       2 ae       level    FMQ2   <NA>      categorical  "10 (7.5%)" "124 (93%~
+      8       2 ae       level    FMQ3   <NA>      categorical  "8 (6.0%)"  "126 (94%~
+      # i 9 more variables: var_type_2_1 <chr>, stat_1_2_1 <chr>, stat_2_2_1 <chr>,
+      #   var_type_3_1 <chr>, stat_1_3_1 <chr>, stat_2_3_1 <chr>, var_type_1_2 <chr>,
+      #   stat_1_1_2 <chr>, stat_2_1_2 <chr>
+      
+      $column_label
+      $column_label[[1]]
+      [1] "tbl_id1"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[2]]
+      [1] "variable"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[3]]
+      [1] "row_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[4]]
+      [1] "**System Organ Class** <br>FMQ (Broad)"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[5]]
+      [1] "var_label"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[6]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[7]]
+      [1] "**A: Drug X**  \nN = 134"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[8]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[9]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[10]]
+      [1] "**B: Placebo**  \nN = 134"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[11]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[12]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[13]]
+      [1] "**C: Combination**  \nN = 132"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[14]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[15]]
+      [1] "var_type"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[16]]
+      [1] "**Overall**  \nN = 400"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      $column_label[[17]]
+      [1] "**NOT OBSERVED**"
+      attr(,"class")
+      [1] "from_markdown"
+      
+      
+      $header
+      $header$title
+      [1] "Table 10. Patients With Serious Adverse Events "
+      
+      $header$subtitle
+      [1] "by System Organ Class and FDA Medical Query (Narrow),\n  Safety Population, Pooled Analyses"
+      
+      $header$preheader
+      NULL
+      
+      
+      $footnotes
+      $footnotes[[1]]
+      [1] "Duration = [e.g., X week double-blind treatment period or median and a range\n    indicating pooled trial durations]."
+      
+      
+

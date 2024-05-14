@@ -20,6 +20,7 @@ Imports:
     formatters (>= 0.5.6),
     ggplot2 (>= 3.4.0),
     gt,
+    gtreg,
     gtsummary,
     lubridate,
     magrittr,
