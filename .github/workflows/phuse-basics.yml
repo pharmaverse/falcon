@@ -1,0 +1,30 @@
+name: Check URLs in docs 📚
+# sourced from phuse-org/devops-toolkit
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  links:
+    name: Links
+    uses: phuse-org/devops-toolkit/.github/workflows/urlchecker.yml@main
+  check:
+    name: R CMD Check
+    uses: phuse-org/devops-toolkit/.github/workflows/R-CMD-check.yml@main
+  coverage:
+    name: Code Coverage
+    uses: phuse-org/devops-toolkit/.github/workflows/test-coverage.yml@main
+    
+  
+  
