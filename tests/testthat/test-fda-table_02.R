@@ -3,7 +3,7 @@ adsl <- adsl_raw %>%
   df_explicit_na()
 
 test_that("Table 02 generation works with default values", {
-  result <- make_table_02(adsl)
+  result <- make_table_02_rtables(adsl)
 
   res <- expect_silent(result)
   expect_snapshot(res)
@@ -16,7 +16,7 @@ test_that("Table 02 generation works with custom values", {
 
   anl <- dplyr::left_join(adsl, advs, by = "USUBJID") %>% df_explicit_na()
 
-  result <- make_table_02(
+  result <- make_table_02_rtables(
     anl,
     vars = c("SEX", "AGE", "AGEGR1", "RACE", "ETHNIC", "COUNTRY", "AVAL"),
     lbl_vars = c(
@@ -44,7 +44,7 @@ test_that("Table 02 generation works with some NA values", {
 
   adsl <- adsl %>% df_explicit_na()
 
-  result <- make_table_02(adsl, vars = "SEX", lbl_vars = "Sex")
+  result <- make_table_02_rtables(adsl, vars = "SEX", lbl_vars = "Sex")
 
   res <- expect_silent(result)
   expect_snapshot(res)

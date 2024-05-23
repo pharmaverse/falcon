@@ -6,19 +6,7 @@
 \alias{make_table_02_gtsum}
 \title{FDA Table 2: Baseline Demographic and Clinical Characteristics, Safety Population, Pooled Analyses}
 \usage{
-make_table_02(
-  df,
-  alt_counts_df = NULL,
-  show_colcounts = TRUE,
-  arm_var = "ARM",
-  saffl_var = "SAFFL",
-  vars = c("SEX", "AGE", "AGEGR1", "RACE", "ETHNIC", "COUNTRY"),
-  lbl_vars = formatters::var_labels(df, fill = TRUE)[vars],
-  lbl_overall = "Total Population",
-  na_rm = FALSE,
-  prune_0 = TRUE,
-  annotations = NULL
-)
+make_table_02(data, ..., tbl_engine = "gtsummary", return_ard = TRUE)
 
 make_table_02_tplyr(
   df,
@@ -78,7 +66,8 @@ table formatted using functions from \code{tfrmt} should be returned (default).}
 }
 \value{
 \itemize{
-\item \code{make_table_02} returns an \code{rtable} object.
+\item \code{make_table_02} returns an object matching the selected \code{tbl_engine} argument.
+The intermediary \code{ARD} object can also be returned with \code{return_ard} set to \code{TRUE}.
 }
 
 \itemize{
@@ -95,14 +84,8 @@ FDA Table 2: Baseline Demographic and Clinical Characteristics, Safety Populatio
 }
 \details{
 \itemize{
-\item \code{df} must contain the variables specified by \code{vars}, \code{arm_var}, and \code{saffl_var}.
-\item If specified, \code{alt_counts_df} must contain the variables specified by \code{arm_var}, \code{id_var}, and \code{saffl_var}.
-\item Flag variables (i.e. \code{XXXFL}) are expected to have two levels: \code{"Y"} (true) and \code{"N"} (false). Missing values in
-flag variables are treated as \code{"N"}.
-\item Columns are split by arm. Overall population column is included by default (see \code{lbl_overall} argument).
-\item Information from either ADSUB or ADVS is generally included into \code{df} prior to analysis.
-\item Numbers in table for non-numeric variables represent the absolute numbers of patients and fraction of \code{N}.
-\item All-zero rows are removed by default (see \code{prune_0} argument).
+\item \code{data} must contain the variables specified by \code{continuous_vars}, and \code{categorical_vars}.
+\item \code{tbl_engine} must be one of \code{gtsummary}, \code{rtables}, \code{tplyr}.
 }
 }
 \section{Functions}{
@@ -129,10 +112,9 @@ adsl <- random.cdisc.data::cadsl \%>\%
     AGE >= 65 ~ ">=65",
     AGE >= 65 & AGE < 75 ~ ">=65 to <75",
     AGE >= 75 ~ ">=75"
-  )) \%>\% formatters::with_label("Age Group, years")) \%>\%
-  formatters::var_relabel(AGE = "Age, years")
+  ))
 
-tbl <- make_table_02(df = adsl)
+tbl <- make_table_02(data = adsl)
 tbl
 
 tbl <- make_table_02_tplyr(df = adsl)
@@ -142,3 +124,4 @@ tbl <- make_table_02_gtsum(df = adsl)
 tbl
 
 }
+\keyword{Internal}
