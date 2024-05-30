@@ -1,4 +1,4 @@
-#' falcon Package
+#' cardinal Package
 #'
 #' Implementation of FDA Safety Tables and Figures
 #'

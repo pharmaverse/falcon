@@ -107,6 +107,6 @@ automatically calculated.}
 \item{y_lab}{(\code{character})\cr y-axis label.}
 }
 \description{
-This documentation lists all the arguments in \code{falcon} that are used repeatedly by functions to output tables.
+This documentation lists all the arguments in \code{cardinal} that are used repeatedly by functions to output tables.
 }
 \keyword{internal}

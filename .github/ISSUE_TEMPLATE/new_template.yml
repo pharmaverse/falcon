@@ -3,7 +3,7 @@ name: 🔨 New Table Template
 description: Add a new table template
 title: "[New Table]: Table XX"
 labels: ["new template"]
-projects: ["falcon"]
+projects: ["cardinal"]
 body:
   - type: textarea
     id: table-layout
@@ -13,7 +13,7 @@ body:
       value: |
         [Replace this line with your table screenshot by dragging the file here.]
 
-        Please refer to page XX of the [FDA guideline document](https://github.com/pharmaverse/falcon/files/10744259/FDA-2022-N-1961-0002_attachment_1.pdf) for more details.
+        Please refer to page XX of the [FDA guideline document](https://github.com/pharmaverse/cardinal/files/10744259/FDA-2022-N-1961-0002_attachment_1.pdf) for more details.
   - type: textarea
     id: table-description
     attributes:

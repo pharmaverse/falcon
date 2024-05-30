@@ -3,7 +3,7 @@ name: ✨ Feature Request
 description: Request or propose a new feature
 title: "[Feature Request]: <title>"
 labels: ["enhancement"]
-projects: ["falcon"]
+projects: ["cardinal"]
 body:
   - type: textarea
     attributes:

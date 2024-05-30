@@ -46,16 +46,16 @@ editor: source
 highlight-style: github
 
 website:
-  title: falcon
+  title: cardinal
   open-graph: true
-  favicon: quarto/assets/images/falcon.png
+  favicon: quarto/assets/images/cardinal.png
   search:
     location: navbar
     type: overlay
     copy-button: true
   page-navigation: true
-  site-url: https://pharmaverse.github.io/falcon
-  repo-url: https://github.com/pharmaverse/falcon
+  site-url: https://pharmaverse.github.io/cardinal
+  repo-url: https://github.com/pharmaverse/cardinal
   repo-branch: main
   google-analytics: UA-125641273-1
   cookie-consent: true
@@ -67,12 +67,12 @@ website:
         href: https://app.slack.com/client/T028PB489D3/C04MQS12MND
         icon: slack
       - aria-label: GitHub
-        href: https://github.com/pharmaverse/falcon
+        href: https://github.com/pharmaverse/cardinal
         icon: github
   navbar:
     pinned: true
     collapse: true
-    logo: quarto/assets/images/falcon.png
+    logo: quarto/assets/images/cardinal.png
     search: true
     left:
       - text: Home
@@ -115,6 +115,6 @@ website:
         menu:
           - quarto/getting_started.qmd
           - text: Report a Bug
-            url: https://github.com/pharmaverse/falcon/issues/new/choose
+            url: https://github.com/pharmaverse/cardinal/issues/new/choose
           - text: FAQ
             file: quarto/faq.qmd

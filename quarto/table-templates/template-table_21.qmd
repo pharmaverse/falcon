@@ -14,7 +14,7 @@ format: html
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
 library(dplyr)
-library(falcon)
+library(cardinal)
 
 adsl <- random.cdisc.data::cadsl %>%
   mutate(AGEGR1 = as.factor(case_when(
@@ -52,7 +52,7 @@ Required variables:
 -   **`df`**: `USUBJID`, `ASER`, and the variables specified by `arm_var` and `saffl_var`.
 -   **`alt_counts_df`** (if specified): `USUBJID` and the variables specified by `arm_var` and `saffl_var`.
 
-`make_table_21()` inherits from `falcon::a_count_occurrences_ser_ae()` function.
+`make_table_21()` inherits from `cardinal::a_count_occurrences_ser_ae()` function.
 
 | Argument         | Description                                                                                                                                                                                                                                            | Default                                                  |
 |:-------------|:-------------------------------------------|:-------------|
@@ -68,5 +68,5 @@ Required variables:
 | `prune_0`        | (`flag`) Whether all-zero rows should be removed from the table.                                                                                                                                                                                       | `TRUE`                                                   |
 | `annotations`    | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer.` Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                                   |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_21.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_21.R).
 :::

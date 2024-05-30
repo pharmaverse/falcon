@@ -96,7 +96,7 @@ alt_counts_df_preproc <- function(alt_counts_df, id_var = "USUBJID", arm_var = "
 #'
 #' @examples
 #' adsl <- random.cdisc.data::cadsl
-#' falcon:::assert_flag_variables(adsl, c("SAFFL", "ITTFL"))
+#' cardinal:::assert_flag_variables(adsl, c("SAFFL", "ITTFL"))
 #'
 #' @keywords internal
 assert_flag_variables <- function(df, flag_vars, na_level = "<Missing>") {

@@ -2,25 +2,25 @@
 title: About the Project
 ---
 
-The falcon project is a product of industry collaboration to encourage the development of shared code, expertise, knowledge, and products.
+The cardinal project is a product of industry collaboration to encourage the development of shared code, expertise, knowledge, and products.
 
 In the near future, the goal is to develop functionality to create regulatory reporting tables suitable for FDA filing. The long-term objective of this collaboration is to develop an R package that can be used industry wide - developing a cross-industry standard and reducing manual work from a reporting perspective.
 
 ## Our Collaboration Journey
 
-Current collaborators are from Roche, Sanofi, Boehringer Ingelheim, and Moderna. Developers are connected via [Slack](https://app.slack.com/client/T028PB489D3/C04MQS12MND) and [GitHub](https://github.com/pharmaverse/falcon) for the creation of shared solutions using publicly available analysis packages for R. Developers are invited to browse the falcon project repository and related packages for insight into our template designs.
+Current collaborators are from Roche, Sanofi, Boehringer Ingelheim, and Moderna. Developers are connected via [Slack](https://app.slack.com/client/T028PB489D3/C04MQS12MND) and [GitHub](https://github.com/pharmaverse/cardinal) for the creation of shared solutions using publicly available analysis packages for R. Developers are invited to browse the cardinal project repository and related packages for insight into our template designs.
 
 ### Joining as a Collaborator
 
-As always we invite further collaboration and welcome additional companies to join the falcon initiative and contribute to the project. Please feel free to contact any of the repository maintainers for more information and check out the section below for more information on joining the project as a developer.
+As always we invite further collaboration and welcome additional companies to join the cardinal initiative and contribute to the project. Please feel free to contact any of the repository maintainers for more information and check out the section below for more information on joining the project as a developer.
 
 #### Information for Developers
 
-As a pharmaverse collaboration, we invite any interested developers to join the falcon team and contribute to template development. To onboard as a developer, please reach out to one of the falcon Product Owners ([Vincent Shen](https://github.com/telepath37), [Freeman Wang](https://github.com/freestatman), Juergen Boehl, Lian Lin) to receive access to the falcon GitHub repository.
+As a pharmaverse collaboration, we invite any interested developers to join the cardinal team and contribute to template development. To onboard as a developer, please reach out to one of the cardinal Product Owners ([Vincent Shen](https://github.com/telepath37), [Freeman Wang](https://github.com/freestatman), Juergen Boehl, Lian Lin) to receive access to the cardinal GitHub repository.
 
 Tasks are assigned and prioritized via issues on our GitHub project board and worked on in development branches. Members of the team will review each other's code and make suggestions before new functions and features are incorporated into the package.
 
-We encourage the smart developer to familiarize themselves with the following packages as they contain functions leveraged by falcon for table creation:
+We encourage the smart developer to familiarize themselves with the following packages as they contain functions leveraged by cardinal for table creation:
 
 -   [`rtables`](https://insightsengineering.github.io/rtables/main/): Table creation
 -   [`tern`](https://insightsengineering.github.io/tern/main/): Clinical trials analysis functions

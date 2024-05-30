@@ -10,27 +10,27 @@ format:
 
 ------------------------------------------------------------------------
 
-#### 1. \ How do I install the falcon package?
+#### 1. \ How do I install the cardinal package?
 
-For instructions on installing the `falcon` package please see the [Environment Setup and Package Installation](https://pharmaverse.github.io/falcon/quarto/getting_started.html#environment-setup-and-package-installation) section of the Getting Started page.
+For instructions on installing the `cardinal` package please see the [Environment Setup and Package Installation](https://pharmaverse.github.io/cardinal/quarto/getting_started.html#environment-setup-and-package-installation) section of the Getting Started page.
 <br/><br/>
 
 
 #### 2. \ How can I join this initiative?
 
-For information on how to join the falcon initiative please see the [Joining as a Collaborator](https://pharmaverse.github.io/falcon/quarto/about.html#joining-as-a-collaborator) section of the About page.
+For information on how to join the cardinal initiative please see the [Joining as a Collaborator](https://pharmaverse.github.io/cardinal/quarto/about.html#joining-as-a-collaborator) section of the About page.
 <br/><br/>
 
 
-#### 3. \ I copied the example "Table Setup" code for one of the falcon tables. How can I customize the table?
+#### 3. \ I copied the example "Table Setup" code for one of the cardinal tables. How can I customize the table?
 
-For each table template page, next to the "Table Setup" tab is the "Function Details" tab. This tab contains information about each of the customizable parameters available for the table, and what the default settings for each are. If you require a customization option that is not available for a given table, please file a Feature Request issue on GitHub [here](https://github.com/pharmaverse/falcon/issues/new/choose).
+For each table template page, next to the "Table Setup" tab is the "Function Details" tab. This tab contains information about each of the customizable parameters available for the table, and what the default settings for each are. If you require a customization option that is not available for a given table, please file a Feature Request issue on GitHub [here](https://github.com/pharmaverse/cardinal/issues/new/choose).
 <br/><br/>
 
 
-#### 4. \ I need a table that isn't available on the falcon website. Can I request a table be added?
+#### 4. \ I need a table that isn't available on the cardinal website. Can I request a table be added?
 
-The falcon team is actively maintaining and adding new table functions to the package. If you would like an FDA safety table that is not listed on the falcon website, please file a New Table Template issue on GitHub [here](https://github.com/pharmaverse/falcon/issues/new/choose) with the table number and the team will work on adding it to the package.
+The cardinal team is actively maintaining and adding new table functions to the package. If you would like an FDA safety table that is not listed on the cardinal website, please file a New Table Template issue on GitHub [here](https://github.com/pharmaverse/cardinal/issues/new/choose) with the table number and the team will work on adding it to the package.
 <br/><br/>
 
 
@@ -45,4 +45,4 @@ A list of all available tables by title is available on the [Template Library In
 
 #### Other Questions - Contact Us
 
-If you have questions not listed above please contact us by filing an issue on GitHub [here](https://github.com/pharmaverse/falcon/issues/new/choose) or reaching out to the falcon team directly via our Slack channel [here](https://app.slack.com/client/T028PB489D3/C04MQS12MND).
+If you have questions not listed above please contact us by filing an issue on GitHub [here](https://github.com/pharmaverse/cardinal/issues/new/choose) or reaching out to the cardinal team directly via our Slack channel [here](https://app.slack.com/client/T028PB489D3/C04MQS12MND).

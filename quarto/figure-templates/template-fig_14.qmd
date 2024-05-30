@@ -13,7 +13,7 @@ format: html
 
 ```{r fig, message=FALSE, warning=FALSE, fig.height=7, fig.width=9}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 advs <- random.cdisc.data::cadvs
 
@@ -55,5 +55,5 @@ Required variables:
 | `add_table`   | (`flag`) whether "Number of Patients" table should be printed under the plot.                                                                                                                                                       | `TRUE`                                            |
 | `annotations` | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, and `caption`. Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                            |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-fig_14.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-fig_14.R).
 :::

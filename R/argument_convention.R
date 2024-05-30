@@ -1,6 +1,6 @@
 #' Standard Arguments
 #'
-#' This documentation lists all the arguments in `falcon` that are used repeatedly by functions to output tables.
+#' This documentation lists all the arguments in `cardinal` that are used repeatedly by functions to output tables.
 #'
 #' @param show_colcounts (`flag`)\cr Whether column counts should be printed. Boolean.
 #' @param arm_var (`character`)\cr Name of the treatment arm variable used to split table into columns.

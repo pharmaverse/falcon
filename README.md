@@ -1,23 +1,23 @@
-# falcon
+# cardinal
 
-<a href='https://pharmaverse.github.io/falcon/'><img src="quarto/assets/images/falcon.png" align="right" height="139" style="max-width: 100%;"/></a>
+<a href='https://pharmaverse.github.io/cardinal/'><img src="quarto/assets/images/cardinal.png" align="right" height="139" style="max-width: 100%;"/></a>
 
 <!-- start badges -->
-[![Pharmaverse](https://pharmaverse.org/shields/falcon.svg)](https://pharmaverse.org)
+[![Pharmaverse](https://pharmaverse.org/shields/cardinal.svg)](https://pharmaverse.org)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-![Check](https://github.com/pharmaverse/falcon/actions/workflows/check.yaml/badge.svg)
-![Test Coverage](https://raw.githubusercontent.com/pharmaverse/falcon/_xml_coverage_reports/data/main/badge.svg)
+![Check](https://github.com/pharmaverse/cardinal/actions/workflows/check.yaml/badge.svg)
+![Test Coverage](https://raw.githubusercontent.com/pharmaverse/cardinal/_xml_coverage_reports/data/main/badge.svg)
 
-![GitHub contributors](https://img.shields.io/github/contributors/pharmaverse/falcon)
-![GitHub stars](https://img.shields.io/github/stars/pharmaverse/falcon?style=social)
-![GitHub forks](https://img.shields.io/github/forks/pharmaverse/falcon?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/pharmaverse/cardinal)
+![GitHub stars](https://img.shields.io/github/stars/pharmaverse/cardinal?style=social)
+![GitHub forks](https://img.shields.io/github/forks/pharmaverse/cardinal?style=social)
 <!-- end badges -->
 
-The `falcon` R package contains table-generating functions to implement standard FDA Safety Tables according to the guidelines published in the [FDA Safety Tables and Figures Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf). The falcon project aims to build and open-source a catalog of harmonized templates for generating tables, listings, and graphs (TLGs) in clinical study reporting. Details on package usage and the variety of functions currently available in the package are available on [the falcon website](https://pharmaverse.github.io/falcon/).
+The `cardinal` R package contains table-generating functions to implement standard FDA Safety Tables according to the guidelines published in the [FDA Safety Tables and Figures Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf). The cardinal project aims to build and open-source a catalog of harmonized templates for generating tables, listings, and graphs (TLGs) in clinical study reporting. Details on package usage and the variety of functions currently available in the package are available on [the cardinal website](https://pharmaverse.github.io/cardinal/).
 
 ## Installation
 
-You can install the latest development version of `falcon` directly from GitHub and its dependencies from CRAN by running the following:
+You can install the latest development version of `cardinal` directly from GitHub and its dependencies from CRAN by running the following:
 
 ```r
 if (!require("formatters")) install.packages("formatters")
@@ -26,19 +26,19 @@ if (!require("rlistings")) install.packages("rlistings")
 if (!require("tern")) install.packages("tern")
 
 if (!require("remotes")) install.packages("remotes")
-remotes::install_github("pharmaverse/falcon")
+remotes::install_github("pharmaverse/cardinal")
 ```
 
-See the [Getting Started page](https://pharmaverse.github.io/falcon/quarto/getting_started.html) on the falcon website for additional details on getting started with the `falcon` package.
+See the [Getting Started page](https://pharmaverse.github.io/cardinal/quarto/getting_started.html) on the cardinal website for additional details on getting started with the `cardinal` package.
 
 ## Usage
 
-In the following example, Table 2 (Baseline Demographic and Clinical Characteristics) from the [FDA Safety Tables and Figures Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf) is generated using the `make_table_02` function from the `falcon` package.
+In the following example, Table 2 (Baseline Demographic and Clinical Characteristics) from the [FDA Safety Tables and Figures Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf) is generated using the `make_table_02` function from the `cardinal` package.
 
-First we will load the `falcon` package and use the [`random.cdisc.data`](https://github.com/insightsengineering/random.cdisc.data) package to load an example ADSL dataset. The `falcon` package works with standard CDISC datasets and variable names while allowing users to set custom variable names & labels where necessary.
+First we will load the `cardinal` package and use the [`random.cdisc.data`](https://github.com/insightsengineering/random.cdisc.data) package to load an example ADSL dataset. The `cardinal` package works with standard CDISC datasets and variable names while allowing users to set custom variable names & labels where necessary.
 
 ```r
-library(falcon)
+library(cardinal)
 adsl <- random.cdisc.data::cadsl
 ```
 
@@ -73,7 +73,7 @@ Race
 ```
 <!-- markdownlint-restore -->
 
-For more information on the `make_table_02` function and parameters you can use to customize the output table, see the [FDA Table 2 page](https://pharmaverse.github.io/falcon/quarto/table-templates/template-table_02.html) on the falcon website.
+For more information on the `make_table_02` function and parameters you can use to customize the output table, see the [FDA Table 2 page](https://pharmaverse.github.io/cardinal/quarto/table-templates/template-table_02.html) on the cardinal website.
 
 ## Related Packages
 
@@ -87,8 +87,8 @@ For more information on the `make_table_02` function and parameters you can use 
 
 We are reachable via the following channels for inquiries and support:
 
-* [Slack](https://app.slack.com/client/T028PB489D3/C04MQS12MND) - Use this channel to message the falcon team directly with questions & feedback on the package. If you don't have access, use this [link](https://join.slack.com/t/pharmaverse/shared_invite/zt-yv5atkr4-Np2ytJ6W_QKz_4Olo7Jo9A) to join the Pharmaverse Slack workspace
-* [GitHub Issues](https://github.com/pharmaverse/falcon/issues/new/choose) - To report a bug, request a new feature or table, or ask a question, open a new issue on GitHub.
+* [Slack](https://app.slack.com/client/T028PB489D3/C04MQS12MND) - Use this channel to message the cardinal team directly with questions & feedback on the package. If you don't have access, use this [link](https://join.slack.com/t/pharmaverse/shared_invite/zt-yv5atkr4-Np2ytJ6W_QKz_4Olo7Jo9A) to join the Pharmaverse Slack workspace
+* [GitHub Issues](https://github.com/pharmaverse/cardinal/issues/new/choose) - To report a bug, request a new feature or table, or ask a question, open a new issue on GitHub.
 
 ## Acknowledgment
 
@@ -96,4 +96,4 @@ This package is a result of an industry collaboration across several different c
 
 ## Stargazers over time
 
-[![stargazers](https://starchart.cc/pharmaverse/falcon.svg)](https://starchart.cc/pharmaverse/falcon)
+[![stargazers](https://starchart.cc/pharmaverse/cardinal.svg)](https://starchart.cc/pharmaverse/cardinal)

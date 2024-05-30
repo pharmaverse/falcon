@@ -1,4 +1,4 @@
-# Run file contents within falcon project to update the template index
+# Run file contents within cardinal project to update the template index
 
 print_ref_templates <- function(fpath) {
   title <- sub("title: ", "", readLines(fpath)[2], )

@@ -13,7 +13,7 @@ format: html
 
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 adsl <- random.cdisc.data::cadsl
 advs <- random.cdisc.data::cadvs
@@ -70,13 +70,13 @@ Required variables:
 | `annotations`    | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer.` Each name-value pair should use the annotation type as name and the desired string as value.       | `NULL`       |
 +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_33.R#L27).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_33.R#L27).
 
 ## gtsummary Table
 
 ```{r tbl_gtsum, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 adsl <- random.cdisc.data::cadsl
 advs <- random.cdisc.data::cadvs
@@ -116,5 +116,5 @@ Required variables:
 | `lbl_overall`   | (`character`) If specified, an overall column will be added to the table with the given value as the column label. | `"Total Population"` |
 +-----------------+--------------------------------------------------------------------------------------------------------------------+----------------------+
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_33.R#L84).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_33.R#L84).
 :::

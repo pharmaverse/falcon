@@ -13,9 +13,9 @@ Click [here](assets/resources/FDA-STF-IG-2022-N-1961-0002.pdf) to download.
 ##### PHUSE EU Connect Presentation
 
 - Date: November 6, 2023
-- Click [here](assets/resources/falcon_PHUSE_EU_2023.pptx) to download the presentation slide deck.
+- Click [here](assets/resources/cardinal_PHUSE_EU_2023.pptx) to download the presentation slide deck.
 
 ##### R/Pharma Online Workshop
 
 - Date: October 20, 2023
-- Click [here](assets/resources/falcon_RinPharma_Workshop_2023.pptx) to download the workshop slide deck.
+- Click [here](assets/resources/cardinal_RinPharma_Workshop_2023.pptx) to download the workshop slide deck.

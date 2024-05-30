@@ -8,13 +8,13 @@ toc-depth: 4
 
 #### Environment Setup
 
-Please ensure that R version 3.6 or higher is installed on your computer. This is required to install the `falcon` package and its dependencies. You can check your current version of R by running `sessionInfo()` within the R console.
+Please ensure that R version 3.6 or higher is installed on your computer. This is required to install the `cardinal` package and its dependencies. You can check your current version of R by running `sessionInfo()` within the R console.
 
 #### Installing Package Dependencies
 
-The `falcon` package requires several packages available on CRAN.
+The `cardinal` package requires several packages available on CRAN.
 
-To use the `falcon` package, ensure you have these necessary package dependencies installed by running the following code:
+To use the `cardinal` package, ensure you have these necessary package dependencies installed by running the following code:
 
 ```{r, echo=TRUE, eval=FALSE}
 if (!require("formatters")) install.packages("formatters")
@@ -24,7 +24,7 @@ if (!require("remotes")) install.packages("remotes")
 if (!require("tern")) install.packages("tern")
 ```
 
-Optionally, to run the examples provided within the `falcon` package and on this site you can also install the synthetic CDISC data package from GitHub, which contains the example datasets, by running the following:
+Optionally, to run the examples provided within the `cardinal` package and on this site you can also install the synthetic CDISC data package from GitHub, which contains the example datasets, by running the following:
 
 ```{r, echo=TRUE, eval=FALSE}
 if (!require("random.cdisc.data")) remotes::install_github("insightsengineering/random.cdisc.data@*release")
@@ -32,31 +32,31 @@ if (!require("random.cdisc.data")) remotes::install_github("insightsengineering/
 
 For more information on these packages, see the [Additional Resources](#additional-resources) section below.
 
-#### Installing the `falcon` Package
+#### Installing the `cardinal` Package
 
-To install the `falcon` package, run the following line of code:
+To install the `cardinal` package, run the following line of code:
 
 ```{r, echo=TRUE, eval=FALSE}
-if (!require("falcon")) remotes::install_github("pharmaverse/falcon")
+if (!require("cardinal")) remotes::install_github("pharmaverse/cardinal")
 ```
 
 ### Loading Data
 
-The table functions provided by `falcon` are designed to work with any datasets which adhere to CDISC standards. If you have access to CDISC data, load this into your R environment as usual to use when generating tables.
+The table functions provided by `cardinal` are designed to work with any datasets which adhere to CDISC standards. If you have access to CDISC data, load this into your R environment as usual to use when generating tables.
 
 If you do not have access to CDISC data, or want to run the examples provided within the package, you can use the `random.cdisc.data` package to load a selection of datasets containing example synthetic randomized CDISC data. Datasets are stored in the package by name, prefixed by the letter `"c"` (for "cached"). For example, after loading the `random.cdisc.data` package you can access an ADSL dataset by running `cadsl`, or ADAE with `cadae`. This data is loaded in where necessary as part of the provided examples.
 
 ### Template Navigation
 
-A list of all templates currently available in `falcon` is provided in the [Template Library Index](index-templates.qmd), with tables designed based on the [FDA Standard Safety Tables and Figures: Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf).
+A list of all templates currently available in `cardinal` is provided in the [Template Library Index](index-templates.qmd), with tables designed based on the [FDA Standard Safety Tables and Figures: Integrated Guide](https://downloads.regulations.gov/FDA-2022-N-1961-0046/attachment_1.pdf).
 
-Each template provided is associated with a function available within the `falcon` package, and contains 4 sections:
+Each template provided is associated with a function available within the `cardinal` package, and contains 4 sections:
 
 -   **Spec. Screenshot**: This tab provides a screenshot of the given table coming from the FDA Standard Safety Table and Figures document.
 
 ![](./assets/images/getting-started/gs-pan1.png){fig-align="center" width="90%"}
 
--   **Table**: This tab displays the output table corresponding to the screenshot in the previous tab, generated using the associated `falcon` table function. You can expect a similar output table when using the table function with your own data, depending on pre-processing and the customizations that you apply via the table function parameters.
+-   **Table**: This tab displays the output table corresponding to the screenshot in the previous tab, generated using the associated `cardinal` table function. You can expect a similar output table when using the table function with your own data, depending on pre-processing and the customizations that you apply via the table function parameters.
 
 ![](./assets/images/getting-started/gs-pan2.png){fig-align="center" width="90%"}
 
@@ -74,15 +74,15 @@ Each template provided is associated with a function available within the `falco
 
 ### Creating Tables
 
-There are many table-generating functions available within the `falcon` package, each of which is used to generate a different FDA standard safety table using R. These functions create `rtables` table objects which can then be further customized, paginated, etc. if required using functions from the [`rtables`](https://insightsengineering.github.io/rtables/main/) package.
+There are many table-generating functions available within the `cardinal` package, each of which is used to generate a different FDA standard safety table using R. These functions create `rtables` table objects which can then be further customized, paginated, etc. if required using functions from the [`rtables`](https://insightsengineering.github.io/rtables/main/) package.
 
 #### Using the Table Functions
 
-To use the table functions you will need to load the `falcon` package and then call the appropriate table function. For example, to create FDA Safety Table 2, you can run the following code:
+To use the table functions you will need to load the `cardinal` package and then call the appropriate table function. For example, to create FDA Safety Table 2, you can run the following code:
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE}
 library(dplyr)
-library(falcon)
+library(cardinal)
 
 # Data pre-processing - ensure all necessary variables are present in the data
 adsl <- random.cdisc.data::cadsl %>%
@@ -140,13 +140,13 @@ make_table_02(df = anl, vars = "RACE", prune_0 = FALSE)
 
 ### Feature Requests
 
-If you would like to request the addition of a new feature to a pre-existing function within `falcon`, or would like a specific table template to be added, please file an issue on GitHub [here](https://github.com/pharmaverse/falcon/issues) or reach out to the falcon team directly via our Slack channel [here](https://app.slack.com/client/T028PB489D3/C04MQS12MND).
+If you would like to request the addition of a new feature to a pre-existing function within `cardinal`, or would like a specific table template to be added, please file an issue on GitHub [here](https://github.com/pharmaverse/cardinal/issues) or reach out to the cardinal team directly via our Slack channel [here](https://app.slack.com/client/T028PB489D3/C04MQS12MND).
 
-You can access the source code for all currently available functions in the `falcon` GitHub repository [here](https://github.com/pharmaverse/falcon/tree/main/R).
+You can access the source code for all currently available functions in the `cardinal` GitHub repository [here](https://github.com/pharmaverse/cardinal/tree/main/R).
 
 ### Additional Resources {#additional-resources}
 
-See the following packages used by `falcon` for more information:
+See the following packages used by `cardinal` for more information:
 
 -   [`rtables`](https://insightsengineering.github.io/rtables/main/): Table creation
 -   [`rlistings`](https://insightsengineering.github.io/rlistings/main/): Listing creation

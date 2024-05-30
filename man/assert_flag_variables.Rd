@@ -22,7 +22,7 @@ Flag variables are expected to take one of two values: \code{"Y"} (yes/true) or
 }
 \examples{
 adsl <- random.cdisc.data::cadsl
-falcon:::assert_flag_variables(adsl, c("SAFFL", "ITTFL"))
+cardinal:::assert_flag_variables(adsl, c("SAFFL", "ITTFL"))
 
 }
 \keyword{internal}

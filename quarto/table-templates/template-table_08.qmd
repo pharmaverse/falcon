@@ -13,7 +13,7 @@ format: html
 
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 adae <- random.cdisc.data::cadae
 adex <- random.cdisc.data::cadex
@@ -49,5 +49,5 @@ Required variables:
 | `na_level`     | (`character`) String to represent missing values.                                                                                                                                                                                                      | `"NA"`                                                                         |
 | `annotations`  | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer.` Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                                                         |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_08.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_08.R).
 :::

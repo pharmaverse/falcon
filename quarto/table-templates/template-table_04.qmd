@@ -13,7 +13,7 @@ format: html
 
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 library(dplyr)
 
 adsl <- random.cdisc.data::cadsl %>%
@@ -64,5 +64,5 @@ Required variables:
 | `prune_0`       | (`flag`) Whether all-zero rows should be removed from the table.                                                                                                                                                                                       | `FALSE`                                      |
 | `annotations`   | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer.` Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                      |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_04.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_04.R).
 :::

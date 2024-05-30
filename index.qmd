@@ -1,5 +1,5 @@
 ---
-title: falcon
+title: cardinal
 ---
 
 ```{css}
@@ -15,12 +15,12 @@ h3 {
 ```{r}
 #| fig-align: "center"
 #| out-width: "1.75in"
-knitr::include_graphics("quarto/assets/images/falcon.png")
+knitr::include_graphics("quarto/assets/images/cardinal.png")
 ```
 
-#### What is falcon?
+#### What is cardinal?
 
-The falcon initiative is an industry collaborative effort under pharmaverse that brings together pharmaceutical companies with the aspiration of building and open-sourcing a catalog of harmonized tables, listings, and graphs (TLGs) in clinical study reporting. Leveraging existing open-source R packages, falcon aims to simplify the process of output review, comparison, and meta-analyses, fostering efficient communication among stakeholders in the pharmaceutical sector while aligning with CDISC's ARD/ARM effort at the same time. Drawing inspiration from the FDA Standard Safety Tables and Figures Integrated Guide, we develop open-source templates. Future plans entail expanding the catalog of templates through continuous collaboration from participating companies and inviting wider industry to promote harmonization of TLGs for clinical reporting.
+The cardinal initiative is an industry collaborative effort under pharmaverse that brings together pharmaceutical companies with the aspiration of building and open-sourcing a catalog of harmonized tables, listings, and graphs (TLGs) in clinical study reporting. Leveraging existing open-source R packages, cardinal aims to simplify the process of output review, comparison, and meta-analyses, fostering efficient communication among stakeholders in the pharmaceutical sector while aligning with CDISC's ARD/ARM effort at the same time. Drawing inspiration from the FDA Standard Safety Tables and Figures Integrated Guide, we develop open-source templates. Future plans entail expanding the catalog of templates through continuous collaboration from participating companies and inviting wider industry to promote harmonization of TLGs for clinical reporting.
 
 ```{=html}
 <div class="divButton">

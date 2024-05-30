@@ -3,7 +3,7 @@ name: ❓ Question
 description: Question about usage or documentation
 title: "[Question]: <title>"
 labels: ["question"]
-projects: ["falcon"]
+projects: ["cardinal"]
 body:
   - type: textarea
     attributes:

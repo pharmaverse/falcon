@@ -13,7 +13,7 @@ format: html
 
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 library(dplyr)
 
 adsl <- random.cdisc.data::cadsl
@@ -77,13 +77,13 @@ Required variables:
 | `na_rm`          | (`flag`) Whether `NA` levels should be removed from the table.                                                                                                                                                                                                                                                                                                                                      | `FALSE`                                                  |
 | `annotations`    | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, `main_footer`, and `prov_footer.` Each name-value pair should use the annotation type as name and the desired string as value.                                                                                                                                              | `NULL`                                                   |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_02.R#L39).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_02.R#L39).
 
 ## Tplyr Table
 
 ```{r tbl_tplyr, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 library(dplyr)
 
 adsl <- random.cdisc.data::cadsl
@@ -146,13 +146,13 @@ Required variables:
 | `annotations`    | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title` and `subtitles.` Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                                   |
 | `tplyr_raw`      | (`flag`) Whether the raw `tibble` created using `Tplyr` functions should be returned, or the table formatted using functions from `tfrmt` should be returned (default).                                                 | `FALSE`                                                  |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_02.R#L94).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_02.R#L94).
 
 ## gtsummary Table
 
 ```{r tbl_gtsummary, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 library(dplyr)
 
 adsl <- random.cdisc.data::cadsl
@@ -211,5 +211,5 @@ Required variables:
 | `lbl_vars`       | (`character`) Labels corresponding to variables in `vars` to print in the table. Labels should be ordered according to the order of variables in `vars`. | `formatters::var_labels(df, fill = TRUE)[vars]`          |
 | `lbl_overall`    | (`character`) If specified, an overall column will be added to the table with the given value as the column label.                                       | `"Total Population"`                                     |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_02.R#L257). 
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_02.R#L257). 
 :::

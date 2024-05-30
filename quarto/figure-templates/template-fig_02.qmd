@@ -13,7 +13,7 @@ format: html
 
 ```{r fig, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 adsl <- random.cdisc.data::cadsl
 adsl$EOSDY <- sample(0:400, nrow(adsl), replace = TRUE)
@@ -51,5 +51,5 @@ Required variables:
 | `add_table`   | (`flag`) whether "Number of Patients" table should be printed under the plot.                                                                                                                                                       | `TRUE`                                            |
 | `annotations` | (named `list` of `character`) List of annotations to add to the table. Valid annotation types are `title`, `subtitles`, and `caption`. Each name-value pair should use the annotation type as name and the desired string as value. | `NULL`                                            |
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-fig_02.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-fig_02.R).
 :::

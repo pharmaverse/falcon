@@ -3,7 +3,7 @@ name: 🐞 Bug Report
 description: File a bug report
 title: "[Bug]: <title>"
 labels: ["bug"]
-projects: ["falcon"]
+projects: ["cardinal"]
 body:
   - type: markdown
     attributes:

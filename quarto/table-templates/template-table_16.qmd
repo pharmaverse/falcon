@@ -16,7 +16,7 @@ editor:
 
 ```{r tbl, message=FALSE, warning=FALSE}
 # Load Libraries & Data
-library(falcon)
+library(cardinal)
 
 adsl <- random.cdisc.data::cadsl
 adae <- random.cdisc.data::cadae
@@ -119,5 +119,5 @@ Required variables:
 |                     | value.                                               |                     |
 +---------------------+------------------------------------------------------+---------------------+
 
-Source code for this function is available [here](https://github.com/pharmaverse/falcon/blob/main/R/fda-table_16.R).
+Source code for this function is available [here](https://github.com/pharmaverse/cardinal/blob/main/R/fda-table_16.R).
 :::
