@@ -65,5 +65,7 @@ title: Template Library Index
 
 -   [FDA Figure 2 -- Time to Last Follow Up, Safety Population, Pooled Analyses](figure-templates/template-fig_02.qmd)
 
+-   [FDA Figure 3 -- Figure 3. Time to Adverse Event Leading to Treatment Discontinuation, Safety Population, Trial X](figure-templates/template-fig_03.qmd)
+
 -   [FDA Figure 14 -- Mean and 95% Confidence Interval of Systolic Blood Pressure Over Time by Treatment Arm, Safety Population, Trial X](figure-templates/template-fig_14.qmd)
 

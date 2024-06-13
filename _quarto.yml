@@ -106,6 +106,7 @@ website:
           - quarto/table-templates/template-table_36.qmd
           - quarto/figure-templates/template-fig_01.qmd
           - quarto/figure-templates/template-fig_02.qmd
+          - quarto/figure-templates/template-fig_03.qmd
           - quarto/figure-templates/template-fig_14.qmd
       - text: About
         file: quarto/about.qmd
